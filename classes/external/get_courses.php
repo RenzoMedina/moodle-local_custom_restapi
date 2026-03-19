@@ -54,8 +54,10 @@ class get_courses extends \external_api {
         global $DB;
 
         // Fetch active courses from the database.
-        $courses = $DB->get_records('course',  null, 'id ASC', 'id, fullname, shortname, startdate, enddate');
-
+        $courses = $DB->get_records('course',
+                                    null,
+                                    'id ASC',
+                                    'id, fullname, shortname, startdate, enddate');
         // Prepare the result array.
         $result = [];
         foreach ($courses as $course) {
